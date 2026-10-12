@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jefftech.example.com/sitemap.xml

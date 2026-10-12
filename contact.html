@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B1F33" />
+
+  <title>Contact &amp; Book a Service | JEFF TECH — AC &amp; Refrigeration, Minna</title>
+  <meta name="description" content="Contact JEFF TECH to book AC or refrigeration service. Call 09135323307, message on WhatsApp, or email jefftech0011@gmail.com. Based in Minna, Niger State — serving all 36 states of Nigeria." />
+  <meta name="keywords" content="contact JEFF TECH, book AC service Minna, AC repair contact Nigeria, refrigeration service contact" />
+  <link rel="canonical" href="https://jefftech.example.com/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact &amp; Book a Service | JEFF TECH" />
+  <meta property="og:description" content="Get in touch with JEFF TECH for AC and refrigeration service in Nigeria." />
+  <meta property="og:url" content="https://jefftech.example.com/contact.html" />
+  <meta property="og:image" content="https://jefftech.example.com/images/hero/hero-placeholder.jpeg" />
+
+  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============ BASE ============ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: #17212B;
+      background: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: #1677FF; text-decoration: none; transition: color .2s ease; }
+    a:hover { color: #0B1F33; }
+    button { font-family: inherit; cursor: pointer; border: 0; background: none; }
+    ul, ol { list-style: none; padding: 0; margin: 0; }
+
+    h1, h2, h3, h4 { color: #0B1F33; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 .5em; }
+    h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 800; }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+    h3 { font-size: clamp(1.125rem, 2vw, 1.375rem); }
+    p { margin: 0 0 1em; }
+    p:last-child { margin-bottom: 0; }
+
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+    .grid { display: grid; gap: 24px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+    .skip-link { position: absolute; top: -100px; left: 12px; background: #0B1F33; color: #fff; padding: 10px 16px; border-radius: 6px; z-index: 9999; font-weight: 600; }
+    .skip-link:focus { top: 12px; }
+
+    /* ============ BUTTONS ============ */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 22px; border-radius: 10px;
+      font-weight: 600; font-size: .95rem; line-height: 1;
+      transition: transform .2s ease, box-shadow .25s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      white-space: nowrap; border: 2px solid transparent;
+    }
+    .btn-lg { padding: 15px 28px; font-size: 1rem; }
+    .btn-primary { background: #1677FF; color: #fff; box-shadow: 0 4px 14px rgba(22,119,255,.25); }
+    .btn-primary:hover { background: #0d5fd6; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(22,119,255,.35); }
+    .btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 4px 14px rgba(37,211,102,.28); }
+    .btn-whatsapp:hover { background: #1da851; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(37,211,102,.38); }
+    .btn-light { background: #fff; color: #0B1F33; }
+    .btn-light:hover { background: #EAF6FF; color: #0B1F33; transform: translateY(-2px); }
+    .btn:focus-visible { outline: 3px solid rgba(22,119,255,.4); outline-offset: 2px; }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid rgba(11,31,51,.06);
+      transition: background .3s ease, box-shadow .3s ease;
+    }
+    .navbar.scrolled { background: rgba(255,255,255,.98); box-shadow: 0 6px 24px rgba(11,31,51,.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; color: #0B1F33; }
+    .logo-img { width: 36px; height: 36px; object-fit: cover; border-radius: 8px; display: block; flex-shrink: 0; transition: transform .3s ease; }
+    .logo:hover .logo-img { transform: scale(1.06); }
+    .logo-text { font-weight: 800; letter-spacing: .04em; font-size: 1.05rem; color: #0B1F33; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-weight: 500; font-size: .94rem; color: #17212B; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background: #1677FF; transition: width .3s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { padding: 11px 20px; font-size: .9rem; }
+    .nav-toggle { display: none; width: 42px; height: 42px; flex-direction: column; justify-content: center; align-items: center; gap: 5px; border-radius: 8px; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: #0B1F33; border-radius: 2px; transition: transform .3s ease, opacity .3s ease; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: 72px 0 0 0; background: #0B1F33; z-index: 999;
+      padding: 24px 20px 120px;
+      transform: translateX(100%);
+      transition: transform .35s cubic-bezier(.22,1,.36,1);
+      overflow-y: auto; visibility: hidden;
+    }
+    .mobile-menu.open { transform: translateX(0); visibility: visible; }
+    .mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu a { color: #fff; font-size: 1.15rem; font-weight: 600; padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-menu a:hover { color: #7CB8FF; }
+    .mobile-menu-cta { margin-top: 20px; justify-content: center; border-bottom: 0 !important; }
+
+    /* ============ NAVY PAGE HERO ============ */
+    .page-hero-navy {
+      background: linear-gradient(135deg, #0B1F33 0%, #142D4A 100%);
+      padding: 96px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-navy::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(22,119,255,.22) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-navy .container { position: relative; }
+    .page-hero-eyebrow {
+      display: inline-block; font-size: .78rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: #7CB8FF;
+      background: rgba(124,184,255,.12);
+      border: 1px solid rgba(124,184,255,.25);
+      padding: 7px 16px; border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .page-hero-navy-title {
+      color: #fff;
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 20px; letter-spacing: -0.02em;
+    }
+    .page-hero-tagline {
+      display: block; font-size: .38em; font-weight: 600; letter-spacing: .01em;
+      margin-top: 16px;
+      background: linear-gradient(90deg, #7CB8FF, #1677FF, #7CB8FF);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 6s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+    .page-hero-navy-sub { color: rgba(255,255,255,.75); font-size: 1.08rem; max-width: 620px; margin: 0 auto; }
+
+    /* ============ CONTACT CARDS ============ */
+    .contact-page { padding-top: 64px; }
+    .contact-page-grid { gap: 24px; margin-bottom: 48px; }
+    .contact-action-card {
+      display: block;
+      background: #fff;
+      border: 1px solid rgba(11,31,51,.08);
+      border-radius: 18px;
+      padding: 32px 28px;
+      text-align: center;
+      color: #17212B;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .contact-action-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(22,119,255,.3);
+      box-shadow: 0 24px 48px -24px rgba(22,119,255,.28);
+      color: #17212B;
+    }
+    .contact-action-card.whatsapp-card:hover {
+      border-color: rgba(37,211,102,.4);
+      box-shadow: 0 24px 48px -24px rgba(37,211,102,.4);
+    }
+    .contact-icon-lg {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 64px; height: 64px;
+      background: #EAF6FF; color: #1677FF;
+      border-radius: 16px; margin-bottom: 20px;
+    }
+    .whatsapp-card .contact-icon-lg { background: rgba(37,211,102,.12); color: #25D366; }
+    .contact-action-card h3 {
+      font-size: 1rem; text-transform: uppercase; letter-spacing: .08em;
+      color: #64748B; margin-bottom: 8px;
+    }
+    .contact-value {
+      font-weight: 700; font-size: 1.05rem; color: #0B1F33;
+      margin-bottom: 12px; word-break: break-word;
+    }
+    .contact-action-link { color: #1677FF; font-weight: 600; font-size: .9rem; }
+
+    /* ============ DETAILS GRID ============ */
+    .contact-details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .contact-detail-card {
+      background: #F5FAFF;
+      border-radius: 16px;
+      padding: 26px 24px;
+      border: 1px solid rgba(22,119,255,.06);
+    }
+    .contact-detail-card h3 {
+      font-size: 1rem; text-transform: uppercase; letter-spacing: .08em;
+      color: #1677FF; margin-bottom: 12px;
+    }
+    .contact-detail-card p { color: #334155; font-size: .96rem; }
+    .contact-detail-card .muted { color: #94A3B8; font-size: .86rem; margin-top: 6px; }
+
+    /* ============ MAIN CTA ============ */
+    .main-cta {
+      background: linear-gradient(135deg, #0B1F33 0%, #142D4A 100%);
+      color: #fff; padding: 88px 0;
+      position: relative; overflow: hidden;
+    }
+    .main-cta::before {
+      content: ''; position: absolute; top: -50%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(22,119,255,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .main-cta-inner { text-align: center; max-width: 720px; margin: 0 auto; position: relative; }
+    .main-cta h2 { color: #fff; margin-bottom: 12px; }
+    .main-cta p { color: rgba(255,255,255,.78); font-size: 1.1rem; margin-bottom: 32px; }
+    .main-cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ============ FOOTER ============ */
+    .footer { background: #0B1F33; color: rgba(255,255,255,.72); padding: 64px 0 0; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 48px;
+      align-items: start;
+    }
+    .footer-col { min-width: 0; }
+    .logo-footer { color: #fff; margin-bottom: 16px; }
+    .logo-footer .logo-text { color: #fff; }
+    .footer-brand p { font-size: .92rem; max-width: 320px; line-height: 1.6; }
+    .footer-col h4 {
+      color: #fff; font-size: .82rem; text-transform: uppercase;
+      letter-spacing: .12em; margin-bottom: 18px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a, .footer-col li { color: rgba(255,255,255,.7); font-size: .92rem; word-break: break-word; }
+    .footer-col a:hover { color: #7CB8FF; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 16px; padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      font-size: .85rem; flex-wrap: wrap;
+    }
+    .footer-bottom ul { display: flex; gap: 24px; }
+    .footer-bottom a { color: rgba(255,255,255,.7); }
+    .footer-bottom a:hover { color: #7CB8FF; }
+
+    /* ============ FLOATING WHATSAPP ============ */
+    .whatsapp-float {
+      position: fixed; right: 24px; bottom: 24px;
+      width: 58px; height: 58px;
+      background: #25D366; color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 12px 30px -8px rgba(37,211,102,.55);
+      z-index: 950;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08); color: #fff;
+      box-shadow: 0 16px 40px -10px rgba(37,211,102,.7);
+    }
+    .whatsapp-float-ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 2px solid #25D366;
+      animation: wa-pulse 3s ease-out infinite;
+      pointer-events: none;
+    }
+    @keyframes wa-pulse {
+      0%   { transform: scale(1);   opacity: .7; }
+      80%  { transform: scale(1.5); opacity: 0; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    /* ============ SCROLL REVEAL ============ */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+      will-change: opacity, transform;
+    }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1024px) {
+      .container { padding: 0 18px; }
+      .section { padding: 64px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .contact-details-grid { grid-template-columns: 1fr 1fr; }
+      /* Footer stays 4-col on tablet */
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 28px; }
+    }
+
+    @media (max-width: 768px) {
+      body { font-size: 15.5px; }
+      .section { padding: 56px 0; }
+      h1 { font-size: clamp(1.75rem, 7vw, 2.4rem); }
+      h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+      .page-hero-navy { padding: 56px 0 48px; }
+      .page-hero-eyebrow { font-size: .68rem; padding: 6px 12px; margin-bottom: 16px; }
+      .page-hero-navy-title { font-size: clamp(1.9rem, 7.5vw, 2.4rem); margin-bottom: 14px; }
+      .page-hero-tagline { font-size: .42em; margin-top: 10px; }
+      .page-hero-navy-sub { font-size: .94rem; }
+
+      .grid-3 { grid-template-columns: 1fr; }
+      .contact-page { padding-top: 40px; }
+      .contact-page-grid { gap: 14px; margin-bottom: 32px; }
+      .contact-action-card { padding: 24px 20px; }
+      .contact-icon-lg { width: 54px; height: 54px; margin-bottom: 14px; }
+      .contact-icon-lg svg { width: 24px; height: 24px; }
+      .contact-action-card h3 { font-size: .88rem; }
+      .contact-value { font-size: .95rem; }
+
+      .contact-details-grid { grid-template-columns: 1fr; gap: 14px; }
+      .contact-detail-card { padding: 20px 18px; }
+
+      .main-cta { padding: 64px 0; }
+      .main-cta-actions { flex-direction: column; align-items: stretch; }
+      .main-cta-actions .btn { width: 100%; }
+
+      .footer { padding-top: 48px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; }
+      .footer-brand p { max-width: 100%; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-bottom ul { justify-content: center; gap: 18px; }
+
+      .whatsapp-float { bottom: 24px; right: 18px; width: 52px; height: 52px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .section { padding: 48px 0; }
+      .nav-inner { height: 64px; }
+      .mobile-menu { inset: 64px 0 0 0; }
+      .logo-text { font-size: .95rem; }
+      .btn { padding: 12px 18px; font-size: .9rem; }
+      .btn-lg { padding: 14px 22px; font-size: .95rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="JEFF TECH home">
+        <img src="images/icons/logo.jpeg" alt="JEFF TECH" class="logo-img" />
+        <span class="logo-text">JEFF TECH</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="projects.html">Our Work</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <a href="contact.html" class="btn btn-primary nav-cta">Book a Service</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="projects.html">Our Work</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary mobile-menu-cta">Book a Service</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <section class="page-hero-navy">
+      <div class="container">
+        <span class="page-hero-eyebrow reveal">Get In Touch</span>
+        <h1 class="page-hero-navy-title reveal">
+          Book a Service
+          <span class="page-hero-tagline">Cooling your world with precision</span>
+        </h1>
+        <p class="page-hero-navy-sub reveal">Tell us what you need — we'll get back to you as soon as we can.</p>
+      </div>
+    </section>
+
+    <section class="section contact-page">
+      <div class="container">
+
+        <div class="grid grid-3 contact-page-grid">
+
+          <a class="contact-action-card reveal" href="tel:+2349135323307" data-phone="contact-card">
+            <div class="contact-icon-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+            </div>
+            <h3>Call Us</h3>
+            <p class="contact-value">09135323307</p>
+            <span class="contact-action-link">Tap to call →</span>
+          </a>
+
+          <a class="contact-action-card reveal whatsapp-card"
+             href="https://wa.me/2349135323307?text=Hello%20JEFF%20TECH%2C%20I%20would%20like%20to%20book%20a%20service.%20My%20location%20is%20______.%20The%20issue%20is%20______."
+             target="_blank" rel="noopener" data-wa="contact-card">
+            <div class="contact-icon-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+            </div>
+            <h3>WhatsApp</h3>
+            <p class="contact-value">09135323307</p>
+            <span class="contact-action-link">Chat now →</span>
+          </a>
+
+          <a class="contact-action-card reveal" href="mailto:jefftech0011@gmail.com">
+            <div class="contact-icon-lg" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            </div>
+            <h3>Email Us</h3>
+            <p class="contact-value">jefftech0011@gmail.com</p>
+            <span class="contact-action-link">Send email →</span>
+          </a>
+
+        </div>
+
+        <div class="contact-details-grid">
+
+          <div class="contact-detail-card reveal">
+            <h3>Location</h3>
+            <p><strong>River Basin Minna</strong><br>and <strong>KFF Street, Gidan Gwano</strong><br>Minna, Niger State, Nigeria</p>
+          </div>
+
+          <div class="contact-detail-card reveal">
+            <h3>Service Areas</h3>
+            <p>Based in Minna, Niger State — offering professional, reliable cooling system services across <strong>all thirty-six states of Nigeria</strong>.</p>
+          </div>
+
+          <div class="contact-detail-card reveal">
+            <h3>Working Hours</h3>
+            <p><strong>Monday – Saturday</strong><br>8:00 AM – 7:00 PM</p>
+            <p class="muted">Closed on Sundays</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section main-cta">
+      <div class="container main-cta-inner reveal">
+        <h2>Cooling Your World With Precision</h2>
+        <p>Get in touch and let's get your AC or refrigerator running reliably again.</p>
+        <div class="main-cta-actions">
+          <a href="https://wa.me/2349135323307?text=Hello%20JEFF%20TECH%2C%20I%20found%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20AC%20and%20refrigeration%20services."
+             class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" data-wa="contact-final-cta">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+            WhatsApp Us
+          </a>
+          <a href="tel:+2349135323307" class="btn btn-light btn-lg" data-phone="contact-final-cta">Call Now</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="index.html" class="logo logo-footer">
+          <img src="images/icons/logo.jpeg" alt="JEFF TECH" class="logo-img" />
+          <span class="logo-text">JEFF TECH</span>
+        </a>
+        <p>Cooling your world with precision. Professional AC and refrigeration services in Minna, Niger State — serving all 36 states of Nigeria.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">AC Installation</a></li>
+          <li><a href="index.html#services">AC Repair</a></li>
+          <li><a href="index.html#services">AC Maintenance</a></li>
+          <li><a href="index.html#services">Refrigerator Repair</a></li>
+          <li><a href="index.html#services">Refrigerant &amp; Evaporator</a></li>
+          <li><a href="index.html#services">Control Board Repair</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="projects.html">Our Work</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+2349135323307" data-phone="footer">09135323307</a></li>
+          <li><a href="https://wa.me/2349135323307?text=Hello%20JEFF%20TECH%2C%20I%20found%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20AC%20and%20refrigeration%20services." target="_blank" rel="noopener" data-wa="footer">WhatsApp</a></li>
+          <li><a href="mailto:jefftech0011@gmail.com">jefftech0011@gmail.com</a></li>
+          <li>Minna, Niger State</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 JEFF TECH. All Rights Reserved.</p>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2349135323307?text=Hello%20JEFF%20TECH%2C%20I%20found%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20AC%20and%20refrigeration%20services."
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" data-wa="float">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+    <span class="whatsapp-float-ring" aria-hidden="true"></span>
+  </a>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var toggle = document.getElementById('navToggle');
+      var menu = document.getElementById('mobileMenu');
+      if (toggle && menu) {
+        var openMenu = function () {
+          menu.classList.add('open');
+          menu.setAttribute('aria-hidden', 'false');
+          toggle.classList.add('open');
+          toggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        };
+        var closeMenu = function () {
+          menu.classList.remove('open');
+          menu.setAttribute('aria-hidden', 'true');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        };
+        toggle.addEventListener('click', function () {
+          menu.classList.contains('open') ? closeMenu() : openMenu();
+        });
+        menu.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', closeMenu);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && menu.classList.contains('open')) closeMenu();
+        });
+      }
+
+      var navbar = document.getElementById('navbar');
+      if (navbar) {
+        var onScroll = function () {
+          if (window.scrollY > 60) navbar.classList.add('scrolled');
+          else navbar.classList.remove('scrolled');
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      var revealEls = document.querySelectorAll('.reveal');
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (revealEls.length && 'IntersectionObserver' in window && !prefersReduced) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('revealed');
+            io.unobserve(entry.target);
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('revealed'); });
+      }
+    })();
+  </script>
+
+</body>
+</html>
