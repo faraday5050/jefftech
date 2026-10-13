@@ -238,3 +238,45 @@
   .navbar, .whatsapp-float, .footer, .main-cta { display: none; }
   body { color: #000; background: #fff; padding: 0; }
 }
+
+
+/* ============================================================
+   SALES SECTION — responsive
+   ============================================================ */
+
+/* Tablet: keep side-by-side but tighter */
+@media (max-width: 1024px) {
+  .sales-grid { grid-template-columns: 1fr; gap: 40px; }
+  .sales-visual { max-width: 620px; margin: 0 auto; width: 100%; }
+}
+
+/* Mobile: images stack vertically */
+@media (max-width: 768px) {
+  .sales-images {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 380px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .sales-image-card { aspect-ratio: 4 / 3; }
+  .sales-label { font-size: .62rem; padding: 7px 10px; left: 10px; right: 10px; bottom: 10px; }
+
+  .sales-lede { font-size: .96rem; }
+
+  .sales-list { grid-template-columns: 1fr; gap: 10px; margin-bottom: 22px; }
+  .sales-list li { font-size: .88rem; }
+
+  .sales-chips { gap: 6px; margin-bottom: 24px; }
+  .sales-chip { font-size: .72rem; padding: 6px 12px; }
+
+  .sales-actions { flex-direction: column; align-items: stretch; }
+  .sales-actions .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .sales-image-card { border-radius: 14px; }
+  .sales-lede { font-size: .9rem; }
+  .sales-list li { font-size: .84rem; }
+  .sales-chip { font-size: .68rem; padding: 5px 10px; }
+}
