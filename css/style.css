@@ -533,3 +533,116 @@ p:last-child { margin-bottom: 0; }
 .contact-detail-card h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: .08em; color: #1677FF; margin-bottom: 12px; }
 .contact-detail-card p { color: #334155; font-size: .96rem; }
 .contact-detail-card .muted { color: #94A3B8; font-size: .86rem; margin-top: 6px; }
+
+/* ============================================================
+   SALES SECTION (AC & Refrigerator Sales)
+   ============================================================ */
+.sales { background: #FFFFFF; }
+
+.sales-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* LEFT — two image cards */
+.sales-visual { position: relative; }
+.sales-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.sales-image-card {
+  position: relative;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #EAF6FF;
+  box-shadow: 0 24px 48px -22px rgba(11,31,51,.3);
+  border: 1px solid rgba(22,119,255,.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.sales-image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -22px rgba(11,31,51,.4);
+}
+.sales-image-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .6s cubic-bezier(.22,1,.36,1);
+}
+.sales-image-card:hover img { transform: scale(1.05); }
+
+.sales-label {
+  position: absolute;
+  left: 12px; right: 12px; bottom: 12px;
+  background: rgba(11,31,51,.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(124,184,255,.25);
+}
+
+/* RIGHT — content */
+.sales-content { display: flex; flex-direction: column; }
+.sales-lede {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.sales-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin-bottom: 26px;
+}
+.sales-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .95rem;
+  font-weight: 500;
+  color: #17212B;
+}
+.sales-list .check { margin-top: 2px; }
+
+/* Category chips */
+.sales-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.sales-chip {
+  display: inline-block;
+  background: #F5FAFF;
+  color: #1677FF;
+  border: 1px solid rgba(22,119,255,.18);
+  font-size: .78rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 100px;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+.sales-chip:hover {
+  background: #EAF6FF;
+  border-color: rgba(22,119,255,.4);
+  transform: translateY(-1px);
+}
+
+.sales-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
